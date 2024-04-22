@@ -25,6 +25,7 @@
     <div class="btn">
         <button onclick="googleSearch()">Google Search</button>
         <button onclick="feelingLucky()">I'm Feeling Lucky</button>
+        <button onclick="googleImagesSearch()">Image</button> <!-- Button for image search -->
     </div>
 </center>
 
@@ -41,9 +42,21 @@
 
     // Function to handle I'm Feeling Lucky
     function feelingLucky() {
-        alert("Redirecting to a random page!");
-        // You can implement redirection to a random page here
+        // Redirect to a top website (W3Schools homepage)
+        window.location.href = 'https://www.w3schools.com/html/default.asp';
     }
+
+    // Function to handle Google Images Search
+    function googleImagesSearch() {
+        var query = document.getElementById('searchInput').value;
+        if (query === '') {
+            alert('Please enter a search query.');
+            return;
+        }
+        window.location.href = 'https://www.google.com/search?tbm=isch&q=' + encodeURIComponent(query);
+    }
+
+    
 </script>
 
 </body>
